@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -27,6 +28,8 @@ namespace API
                 {
                     { "oauth2", new[] { Constants.Scope } }
                 });
+
+                c.DocumentFilter<SwaggerAccessDocumentFilter>();
             });
         }
 
@@ -39,6 +42,14 @@ namespace API
                 c.OAuthClientId(Constants.ClientId);
                 c.OAuthAppName("Demo API - Swagger");
                 c.OAuthClientSecret(Constants.ClientSecret);
+
+                c.IndexStream = () =>
+                {
+                    var assembly = Assembly.GetExecutingAssembly();
+                    return assembly
+                        .GetManifestResourceStream($"{assembly.GetName().Name}.swagger-ui.index.html");
+                };
+
             });
         }
     }
