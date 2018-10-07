@@ -11,7 +11,7 @@ Unauthorized visitor will see nothing in our SwaggerUI page:
 
 ![](https://i.imgur.com/bvZ1kUv.png)
 
-But after authorization routes will appear:
+But routes will appear after authorization:
 
 ![](https://i.imgur.com/b9bL4jy.png)
 
