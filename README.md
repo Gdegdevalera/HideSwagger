@@ -1,9 +1,9 @@
 # HideSwagger plugin example
 
-If you use ASP.NET API and Swagger you faced with an issue how to hide the swagger specs for your production environment.
-Of course, it is possible to do this by conditions in code or by API routes filtering on the reverse proxy level.
+Swagger should be hidden for the production environment.
+It is possible to do this by using conditions in code or by API routes filtering on the reverse proxy level.
 
-But let I introduce another one solution for this issue. We will use your system authorization. 
+But let me introduce another solution for this issue. We will use your system authorization. 
 
 This example is for OAuth2 with login\password authorization.
 
